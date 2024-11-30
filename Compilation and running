@@ -1,0 +1,2 @@
+javac WeatherForecastApp.java
+java WeatherForecastApp
