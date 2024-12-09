@@ -16,4 +16,4 @@ This project includes user management templates for a weather forecasting applic
 - `login.html` - Login page
 - `register.html` - Registration page
 - `styles.css` - Custom styling
-- `script.js` - Validation logic
+- `script.js` - Validation logic 
