@@ -1,0 +1,36 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const forms = document.querySelectorAll("form");
+
+  forms.forEach(form => {
+    form.addEventListener("submit", event => {
+      event.preventDefault();
+
+      const inputs = form.querySelectorAll("input");
+      let isValid = true;
+
+      inputs.forEach(input => {
+        if (!input.value.trim()) {
+          input.classList.add("is-invalid");
+          isValid = false;
+        } else {
+          input.classList.remove("is-invalid");
+        }
+
+        if (input.type === "email" && !validateEmail(input.value)) {
+          input.classList.add("is-invalid");
+          isValid = false;
+        }
+      });
+
+      if (isValid) {
+        alert("Form submitted successfully!");
+        form.reset();
+      }
+    });
+  });
+});
+
+function validateEmail(email) {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return regex.test(email);
+}
